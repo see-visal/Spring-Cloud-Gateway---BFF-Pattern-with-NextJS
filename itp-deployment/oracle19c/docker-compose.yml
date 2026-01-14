@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  oracle19c:
+    image: gvenzl/oracle-xe:21-slim
+    container_name: oracle19c-itp
+    environment:
+      ORACLE_PASSWORD: OraclePassword123
+      ORACLE_DATABASE: ITPDB
+      APP_USER: itpusr
+      APP_USER_PASSWORD: itp@168
+    ports:
+      - "1521:1521"
+      - "5500:5500"
+    volumes:
+      - oracle-data:/opt/oracle/oradata
+    networks:
+      - itp-net
+    shm_size: 1gb
+    healthcheck:
+      test: ["CMD-SHELL", "healthcheck.sh"]
+      interval: 30s
+      timeout: 10s
+      retries: 10
+      start_period: 120s
+
+volumes:
+  oracle-data:
+
+networks:
+  itp-net:
+    external: true
+

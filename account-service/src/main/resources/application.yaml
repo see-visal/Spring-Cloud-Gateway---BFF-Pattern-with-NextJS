@@ -1,0 +1,86 @@
+
+server:
+  # Port where the Account service will run
+  port: 8082
+
+spring:
+  application:
+    # Name of the microservice (used by Config Server, Eureka, logs, etc.)
+    name: account
+  profiles:
+    active: dev
+  config:
+    # Import external configuration from Spring Cloud Config Server
+    import: optional:configserver:http://localhost:8888
+
+  cloud:
+    config:
+      enabled: true
+      fail-fast: false
+
+  # Database Configuration (PostgreSQL)
+
+  datasource:
+    # JDBC connection URL for PostgreSQL (Docker container on port 16851)
+    url: jdbc:postgresql://localhost:16851/itp_micro_db
+
+    # Database username
+    username: itpusr
+
+    # Database password
+    password: itp@168
+
+    # PostgreSQL JDBC driver
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      # Update schema instead of drop and create
+      ddl-auto: update
+
+    # Show generated SQL queries in logs
+    show-sql: true
+
+    properties:
+      hibernate:
+        # Format SQL output to be more readable
+        format_sql: true
+
+  # Enable SQL script initialization
+  sql:
+    init:
+      mode: never
+      # Run after Hibernate schema creation
+      defer-datasource-initialization: true
+
+eureka:
+  client:
+    enabled: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    prefer-ip-address: false
+    hostname: localhost
+    instance-id: ${spring.application.name}:${server.port}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+
+logging:
+  level:
+    com.see_visal.Account.Service: DEBUG
+
+#  Security Configuration for OAuth2 Resource Server
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/myrealm
