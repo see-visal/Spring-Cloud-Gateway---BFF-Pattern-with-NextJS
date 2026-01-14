@@ -1,7 +1,0 @@
-service:
-  info: ITP Professional - Microservice Repository
-  tag: itp
-
-  description: Configuration Repository Service for ITP
-
-  version: 1.1
