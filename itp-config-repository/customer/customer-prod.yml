@@ -1,6 +1,6 @@
 
 service:
-  name: Customer Service (Production "prod")
+  name: Customer Service (Production prod)
   description: Configuration Repository Service for ITP
   version: 1.1-released
 

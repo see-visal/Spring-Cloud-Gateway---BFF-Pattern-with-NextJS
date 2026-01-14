@@ -1,6 +1,6 @@
 
 service:
-  name: Customer Service (Quality Assurance)
+  name: Customer Service (Quality Assurance )
   description: Configuration Repository Service for ITP
   version: 1.1-pre-released
 
