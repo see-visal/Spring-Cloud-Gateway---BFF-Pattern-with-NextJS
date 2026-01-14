@@ -1,0 +1,9 @@
+
+service:
+  name: Customer Service (Production prod)
+  description: Configuration Repository Service for ITP
+  version: 1.1-released
+
+secret:
+  weak-password: ${WEAK_PASSWORD}
+  strong-password: ${STRONG_PASSWORD}
