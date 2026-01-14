@@ -1,9 +1,8 @@
-<<<<<<< HEAD
+ 
 # repos-config
-=======
-<<<<<<< HEAD
+ 
 # itp-config-repos
->>>>>>> 54db8e0ffc0be44207f1b6b7959cba3b36c1fac1
+ 
 
 
 
@@ -20,22 +19,21 @@ Already a pro? Just edit this README.md and make it your own. Want to make it ea
 
 ```
 cd existing_repo
-<<<<<<< HEAD
+
 git remote add origin https://gitlab.com/see-visal/repos-config.git
-=======
+
 git remote add origin https://gitlab.com/see-visal/itp-config-repos.git
->>>>>>> 54db8e0ffc0be44207f1b6b7959cba3b36c1fac1
+
 git branch -M main
 git push -uf origin main
 ```
 
 ## Integrate with your tools
 
-<<<<<<< HEAD
+
 * [Set up project integrations](https://gitlab.com/see-visal/repos-config/-/settings/integrations)
-=======
 * [Set up project integrations](https://gitlab.com/see-visal/itp-config-repos/-/settings/integrations)
->>>>>>> 54db8e0ffc0be44207f1b6b7959cba3b36c1fac1
+
 
 ## Collaborate with your team
 
