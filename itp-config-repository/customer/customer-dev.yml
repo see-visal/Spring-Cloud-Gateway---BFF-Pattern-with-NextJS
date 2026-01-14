@@ -8,7 +8,4 @@ service:
 secret:
   weak-password: ${WEAK_PASSWORD}
   strong-password: ${STRONG_PASSWORD}
-<<<<<<< HEAD
-
-=======
->>>>>>> 54db8e0ffc0be44207f1b6b7959cba3b36c1fac1
+ 
